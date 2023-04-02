@@ -16,7 +16,7 @@ function App() {
   }, [contacts]);
 
   const addContact = (contact) => {
-    contacts.find(({ name }) => name === contact.name)
+    contacts.find(({ name }) => name.toLowerCase() === contact.name.toLowerCase())
       ? alert(`${contact.name} is already in contacts!`)
       : setContacts((prevContacts) => [...prevContacts, contact]);
   };
